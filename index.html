@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APEX Capital Realty — Florida Commercial Listings</title>
+<meta name="description" content="Design preview of the APEX Capital Realty listings: the 30 highest-priced active sale listings across Florida, with photos, prices and direct contact.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0C1340">
+<link rel="icon" href="assets/brand/logo-white.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"APEX Capital Realty","description":"Independent commercial real estate brokerage in Florida, founded in 2017 in Miami.","url":"https://apexcapitalrealty.com/","logo":"assets/brand/logo-navy.webp","image":"assets/hero/hero-1.webp","telephone":"+1-305-570-2600","email":"info@apexcapitalrealty.com","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"561 NE 79th St, Suite 420","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":"Florida","openingHours":"Mo-Fr 09:00-18:00","sameAs":["https://www.linkedin.com/company/apex-capital-realty","https://www.instagram.com/apexcapitalrealty","https://www.facebook.com/apexcapitalrealty","https://www.youtube.com/@apexcapitalrealty9266"]}
+</script>
+<style>
+:root{
+  --bg:#070B26; --bg2:#0C1340; --bg3:#131B52;
+  --paper:#F3F1EC; --paper2:#E9E6DE; --card:#FFFFFF;
+  --brand:#234BC2; --brand-d:#1B3A9C; --accent:#9DB0F2;
+  --ink:#0C1340; --muted:#4B5272; --line:#D9D6CC; --line-dk:rgba(157,176,242,.22);
+  --on-dark:#F4F6FD; --on-dark-2:#B9C2E4;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --wrap:1280px; --gut:clamp(18px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.light .eyebrow{color:var(--brand)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;font-weight:700;font-size:15px;letter-spacing:.01em;border:1.5px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s;border-radius:2px}
+.btn-p{background:var(--brand);color:#fff}
+.btn-p:hover{background:#2f5ae0}
+.btn-o{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-o:hover{background:#fff;color:var(--bg2)}
+.light .btn-o{border-color:var(--ink);color:var(--ink)}
+.light .btn-o:hover{background:var(--ink);color:#fff}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px 14px;z-index:100}
+.skip:focus{left:8px}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+.hdr.solid{background:rgba(7,11,38,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-dk)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:84px}
+.logo img{height:46px;width:auto}
+.nav{display:flex;gap:30px;font-size:14px;font-weight:600;color:var(--on-dark)}
+.nav a{opacity:.86;padding:10px 0}
+.nav a:hover{opacity:1;color:var(--accent)}
+.hr{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid rgba(255,255,255,.35);border-radius:2px}
+.lang button{background:none;border:0;min-width:44px;min-height:44px;padding:0 10px;font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--on-dark-2);cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--bg2)}
+.hcall{min-height:44px;padding:0 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;background:none;border:1px solid rgba(255,255,255,.35);border-radius:2px;cursor:pointer;color:#fff}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#fff;margin:0 auto;position:relative;content:""}
+.burger span::before{position:absolute;top:-6px;left:0}.burger span::after{position:absolute;top:6px;left:0}
+.mnav{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--on-dark);overflow:hidden;isolation:isolate}
+.hslides{position:absolute;inset:0;z-index:-2;background:var(--bg)}
+.hslides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.6s ease,transform 9s ease-out}
+.hslides img.on{opacity:1;transform:scale(1)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,11,38,.9) 0%,rgba(7,11,38,.62) 45%,rgba(7,11,38,.12) 100%),linear-gradient(0deg,rgba(7,11,38,.92) 0%,rgba(7,11,38,0) 38%)}
+.hbody{padding:140px 0 38px}
+.hero h1{font-size:clamp(46px,7.6vw,112px);max-width:12.5em;margin:18px 0 22px;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:500}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:36em;color:var(--on-dark-2)}
+.hcta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hstats{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 56px;margin-top:56px;padding-top:24px;border-top:1px solid var(--line-dk)}
+.hstats b{display:block;font-family:var(--serif);font-size:38px;font-weight:600;line-height:1;color:#fff}
+.hstats span{font-size:13px;color:var(--on-dark-2)}
+.hcap{position:absolute;right:var(--gut);bottom:110px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-2)}
+
+/* featured pinned gallery */
+.feat{background:var(--bg);color:var(--on-dark);position:relative}
+.fhead{padding:110px 0 36px}
+.fhead h2{font-size:clamp(40px,5vw,72px);margin-top:12px;font-weight:500}
+.fhead h2 em{font-style:italic;color:var(--accent)}
+.fhead p{max-width:34em;color:var(--on-dark-2);margin-top:14px}
+.hs{overflow:hidden}
+.htrack{display:flex;gap:26px;padding:0 var(--gut) 110px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.pinned .htrack{overflow:visible;scroll-snap-type:none;padding-bottom:0;width:max-content}
+.pinned.hs{height:100vh;display:flex;align-items:center}
+.fp{position:relative;flex:0 0 min(78vw,520px);scroll-snap-align:start;aspect-ratio:4/5;overflow:hidden;background:var(--bg3);border-radius:2px}
+.pinned .fp{flex:0 0 min(46vw,660px);height:min(74vh,640px);aspect-ratio:auto}
+.fp img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.fp:hover img{transform:scale(1.04)}
+.fp::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,11,38,.94) 2%,rgba(7,11,38,0) 56%)}
+.fp .ft{position:absolute;left:0;right:0;bottom:0;padding:26px 28px;z-index:2}
+.fp .num{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--accent)}
+.fp .pr{font-family:var(--serif);font-size:clamp(36px,3.4vw,54px);font-weight:600;line-height:1.05;margin:4px 0}
+.fp .ad{font-weight:700;font-size:17px}
+.fp .mt{font-size:14px;color:var(--on-dark-2)}
+.fp .go{display:inline-flex;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+.fp .tg{position:absolute;top:18px;left:18px;z-index:2}
+.fp-end{flex:0 0 min(70vw,360px);display:flex;flex-direction:column;justify-content:center;gap:18px;scroll-snap-align:start}
+.fp-end h3{font-size:42px;font-weight:500}
+
+/* tags */
+.tg{display:inline-block;padding:5px 11px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(7,11,38,.78);color:#fff;border-radius:2px;backdrop-filter:blur(4px)}
+.tg.uc{background:#B45309}
+
+/* catalog */
+.cat{background:var(--paper);color:var(--ink);padding:110px 0 120px}
+.chead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.chead h2{font-size:clamp(40px,5vw,72px);margin-top:12px;font-weight:500}
+.chead h2 em{font-style:italic;color:var(--brand)}
+.chead p{max-width:32em;color:var(--muted);margin-top:12px}
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:44px 0 30px;padding:16px 0;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;background:none;border:1px solid var(--line);border-radius:100px;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink);transition:.2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip small{opacity:.6;font-weight:600;margin-left:4px}
+.sortb{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.sortb select{min-height:44px;padding:0 14px;background:#fff;border:1px solid var(--line);border-radius:2px;font-weight:600;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:30px}
+.pc{grid-column:span 4;background:var(--card);display:flex;flex-direction:column;border:1px solid var(--line);border-radius:2px;transition:box-shadow .3s,transform .3s}
+.pc:hover{box-shadow:0 18px 40px -18px rgba(12,19,64,.35)}
+.pc.lg{grid-column:span 6}
+.pc[hidden]{display:none}
+.car{position:relative;background:var(--paper2)}
+.ctrk{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/3}
+.lg .ctrk{aspect-ratio:16/10}
+.ctrk::-webkit-scrollbar{display:none}
+.ctrk img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center;background:var(--paper2)}
+.car .tg{position:absolute;top:14px;left:14px}
+.car .tp{position:absolute;top:14px;left:auto;right:14px;background:rgba(255,255,255,.92);color:var(--ink);backdrop-filter:blur(4px)}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;transition:opacity .2s}
+.car:hover .arr,.car:focus-within .arr{opacity:1}
+.arr.pv{left:10px}.arr.nx{right:10px}
+.arr svg{width:18px;height:18px}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:7px;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.dots i.on{background:#fff;width:20px;border-radius:7px}
+.cnt{position:absolute;right:14px;bottom:10px;font-size:11px;font-weight:700;background:rgba(7,11,38,.7);color:#fff;padding:2px 8px;border-radius:2px;letter-spacing:.06em}
+.cb{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.cb .price{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1;color:var(--ink)}
+.lg .price{font-size:48px}
+.cb .psf{font-size:13px;color:var(--muted);margin-top:4px}
+.cb h3{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.3;margin-top:16px;letter-spacing:0}
+.cb .loc{font-size:14px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin:18px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{min-width:0}
+.facts dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brand)}
+.facts dd{font-size:14px;font-weight:600;line-height:1.4}
+.blurb{font-size:14.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.adv{font-size:13px;color:var(--muted);margin-top:14px}
+.adv b{color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:auto;padding-top:18px}
+.acts .btn{flex:1 1 auto;min-width:170px}
+.acts .lk{font-weight:700;font-size:14px;border-bottom:1.5px solid var(--brand);padding:12px 0 2px;color:var(--brand);min-height:44px;display:inline-flex;align-items:flex-end}
+.empty{padding:60px 0;text-align:center;color:var(--muted)}
+.note{margin-top:36px;font-size:13px;color:var(--muted);max-width:60em}
+
+/* markets */
+.mk{background:var(--bg2);color:var(--on-dark);padding:110px 0}
+.mk h2{font-size:clamp(40px,5vw,72px);font-weight:500;margin-top:12px}
+.mk h2 em{font-style:italic;color:var(--accent)}
+.mrows{margin-top:48px;border-top:1px solid var(--line-dk)}
+.mr{display:grid;grid-template-columns:70px 1fr auto auto;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line-dk);transition:padding .3s,background .3s}
+.mr:hover{padding-left:16px;background:rgba(157,176,242,.07)}
+.mr i{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px}
+.mr strong{font-family:var(--serif);font-size:clamp(28px,3.4vw,48px);font-weight:500;line-height:1.1}
+.mr span{font-size:14px;color:var(--on-dark-2)}
+.mr svg{width:26px;height:26px;color:var(--accent)}
+
+/* about */
+.about{padding:110px 0}
+.about.light{background:var(--paper)}
+.agrid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,6vw,90px);align-items:start}
+.about h2{font-size:clamp(38px,4.6vw,66px);font-weight:500;margin:12px 0 24px}
+.about h2 em{font-style:italic;color:var(--brand)}
+.about p{color:var(--muted);max-width:34em;margin-bottom:14px}
+.awards{margin-top:30px;border-top:1.5px solid var(--ink)}
+.awards div{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.awards b{font-weight:700}.awards span{color:var(--muted);text-align:right}
+.press{margin-top:20px;font-size:13px;color:var(--muted)}
+.team{display:grid;gap:0;border-top:1.5px solid var(--ink)}
+.tm{display:grid;grid-template-columns:96px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+.tm img{width:96px;height:96px;object-fit:cover;border-radius:50%;filter:grayscale(.15)}
+.tm h3{font-size:30px;font-weight:600;line-height:1.1}
+.tm .role{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:4px 0 8px}
+.tm q{display:block;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3;quotes:none;margin-bottom:10px}
+.tm .ct{font-size:14px;display:flex;flex-wrap:wrap;gap:4px 18px}
+.tm .ct a{font-weight:600;border-bottom:1px solid var(--line);min-height:32px;display:inline-flex;align-items:center}
+.srcnote{margin-top:14px;font-size:12.5px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--bg);color:var(--on-dark);padding:120px 0 100px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:url(assets/hero/hero-2.webp) center/cover;opacity:.16}
+.contact .wrap{position:relative}
+.contact h2{font-size:clamp(44px,6.4vw,96px);font-weight:500;max-width:11em;margin:14px 0 30px}
+.contact h2 em{font-style:italic;color:var(--accent)}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:70px;padding-top:34px;border-top:1px solid var(--line-dk)}
+.cgrid h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.cgrid p,.cgrid a{font-size:15.5px;color:var(--on-dark-2);display:block}
+.cgrid a:hover{color:#fff}
+.cgrid .big{font-family:var(--serif);font-size:30px;color:#fff;font-weight:500;line-height:1.2}
+.soc{display:flex;flex-wrap:wrap;gap:6px 22px}
+.soc a{display:inline;padding:10px 0;min-height:44px}
+.ftr{background:#04061A;color:var(--on-dark-2);padding:34px 0 90px;font-size:13px}
+.ftr .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 40px}
+.ftr img{height:34px;width:auto}
+.ftr p{max-width:52em}
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px 0 20px;background:var(--brand);color:#fff;border-radius:100px;font-weight:700;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .25s,background .25s}
+.fab:hover{background:#2f5ae0;transform:translateY(-2px)}
+.fab svg{width:20px;height:20px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.nojs .rv{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  .pc,.pc.lg{grid-column:span 6}
+  .nav{display:none}
+}
+@media (max-width:860px){
+  .agrid{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr}
+  .hstats{grid-template-columns:repeat(2,auto);gap:18px 36px}
+  .hcap{display:none}
+}
+@media (max-width:720px){
+  .hdr .wrap{height:68px}
+  .logo img{height:36px}
+  .hcall{display:none}
+  .burger{display:block}
+  .mnav{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(7,11,38,.98);padding:10px var(--gut) 22px;border-top:1px solid var(--line-dk)}
+  .mnav.open{display:block}
+  .mnav a{display:flex;align-items:center;min-height:50px;font-weight:600;border-bottom:1px solid var(--line-dk);color:var(--on-dark)}
+  .hero h1{font-size:clamp(42px,13vw,64px)}
+  .hbody{padding-top:110px;padding-bottom:96px}
+  .hcta .btn{width:100%}
+  .grid{gap:22px}
+  .pc,.pc.lg{grid-column:1/-1}
+  .lg .ctrk{aspect-ratio:4/3}
+  .lg .price{font-size:40px}
+  .arr{opacity:1;width:44px;height:44px}
+  .mr{grid-template-columns:44px 1fr auto;gap:12px}
+  .mr span{display:none}
+  .tm{grid-template-columns:72px 1fr;gap:16px}
+  .tm img{width:72px;height:72px}
+  .fab{right:12px;left:12px;justify-content:center}
+  .tools{flex-direction:column;align-items:stretch}
+  .sortb{justify-content:space-between}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  .hslides img{transform:none}
+}
+</style>
+</head>
+<body class="nojs">
+<a class="skip" href="#catalog" data-i18n="skip">Skip to listings</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="APEX Capital Realty"><img src="assets/brand/logo-white.webp" alt="APEX Capital Realty" width="230" height="46"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#featured" data-i18n="nav_feat">Signature listings</a>
+      <a href="#catalog" data-i18n="nav_cat">All listings</a>
+      <a href="#markets" data-i18n="nav_mk">Markets</a>
+      <a href="#about" data-i18n="nav_ab">The firm</a>
+      <a href="#contact" data-i18n="nav_ct">Contact</a>
+    </nav>
+    <div class="hr">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-p hcall" href="tel:+13055702600">(305) 570-2600</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <a href="#featured" data-i18n="nav_feat">Signature listings</a>
+    <a href="#catalog" data-i18n="nav_cat">All listings</a>
+    <a href="#markets" data-i18n="nav_mk">Markets</a>
+    <a href="#about" data-i18n="nav_ab">The firm</a>
+    <a href="#contact" data-i18n="nav_ct">Contact</a>
+    <a href="tel:+13055702600" data-i18n="call_now">Call (305) 570-2600</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="APEX Capital Realty">
+  <div class="hslides" id="hslides">
+    <img class="on" src="assets/hero/hero-1.webp" alt="Aerial view of 8230 NW 56 St, Doral, an industrial property listed by APEX" fetchpriority="high" width="1920" height="1082">
+    <img data-src="assets/hero/hero-2.webp" alt="Aerial view of 2201 NE 2nd Ave in Edgewater, Miami" width="1920" height="1440">
+    <img data-src="assets/hero/hero-3.webp" alt="Aerial view of 2121 Biscayne Blvd, Miami" width="1920" height="728">
+  </div>
+  <div class="wrap hbody">
+    <div class="eyebrow" data-i18n="h_eyebrow">Industrial first · Every market in Florida</div>
+    <h1 data-i18n-html="h_title">Florida commercial property, <em>priced and in view.</em></h1>
+    <p class="lead" data-i18n="h_lead">The 30 highest-priced active sale listings from APEX Capital Realty: photos, asking price and the advisor to call, all on one page.</p>
+    <div class="hcta">
+      <a class="btn btn-p" href="tel:+13055702600" data-i18n="call_now">Call (305) 570-2600</a>
+      <a class="btn btn-o" href="#catalog" data-i18n="h_browse">Browse the 30 listings</a>
+    </div>
+    <div class="hstats">
+      <div><b>$2B+</b><span data-i18n="s1">Closed volume, every asset class</span></div>
+      <div><b>72</b><span data-i18n="s2">Florida cities, Tallahassee to the Keys</span></div>
+      <div><b>2017</b><span data-i18n="s3">Founded in Miami</span></div>
+      <div><b>2</b><span data-i18n="s4">Offices · Miami and Orlando</span></div>
+    </div>
+  </div>
+  <div class="hcap" id="hcap">8230 NW 56 St · Doral</div>
+</section>
+
+<section class="feat" id="featured" aria-labelledby="ft">
+  <div class="wrap fhead">
+    <div class="eyebrow" data-i18n="f_eyebrow">Signature listings</div>
+    <h2 id="ft" data-i18n-html="f_title">The six largest <em>assets on the market.</em></h2>
+    <p data-i18n="f_sub">Ranked by asking price. Each one links to its full listing on the APEX site.</p>
+  </div>
+  <div class="hs" id="hs"><div class="htrack" id="htrack"></div></div>
+</section>
+
+<section class="cat light" id="catalog" aria-labelledby="ct">
+  <div class="wrap">
+    <div class="chead">
+      <div>
+        <div class="eyebrow" data-i18n="c_eyebrow">The catalog</div>
+        <h2 id="ct" data-i18n-html="c_title">30 listings, <em>highest price first.</em></h2>
+        <p data-i18n="c_sub">The 30 highest-priced active sale listings. Filter by market or flip the order; every card goes straight to the advisor.</p>
+      </div>
+    </div>
+    <div class="tools">
+      <div class="chips" id="chips" role="group" aria-label="Market"></div>
+      <label class="sortb"><span data-i18n="sort_l">Sort by</span>
+        <select id="sort"><option value="desc" data-i18n="sort_d">Price: high to low</option><option value="asc" data-i18n="sort_a">Price: low to high</option></select>
+      </label>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="note" data-i18n="c_note">Showing the 30 highest-priced active sale listings of 90 active listings on apexcapitalrealty.com. Information is deemed reliable but not guaranteed; subject to errors, omissions, prior sale or lease, or withdrawal without notice. Property descriptions are shown in their original English.</p>
+  </div>
+</section>
+
+<section class="mk" id="markets" aria-labelledby="mt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="m_eyebrow">Markets</div>
+    <h2 id="mt" data-i18n-html="m_title">Five markets, <em>one floor.</em></h2>
+    <div class="mrows" id="mrows"></div>
+  </div>
+</section>
+
+<section class="about light" id="about" aria-labelledby="at">
+  <div class="wrap agrid">
+    <div>
+      <div class="eyebrow" data-i18n="a_eyebrow">The firm</div>
+      <h2 id="at" data-i18n-html="a_title">Founded in 2017 on one conviction: <em>boutique beats bureaucracy.</em></h2>
+      <p data-i18n="a_p1">APEX was built as the firm its founders wanted to work at: independent, entrepreneurial, and measured on what it closes. Brokerage is the engine; APX Insure and a capital markets desk sit around it.</p>
+      <p data-i18n="a_p2">Deals get worked from both sides of one floor, and leads go to whoever can close them.</p>
+      <div class="awards">
+        <div><b data-i18n="aw1">Top 25 South Florida Commercial Brokerage</b><span>South Florida Business Journal · 2020–2024</span></div>
+        <div><b>Inc. 5000</b><span data-i18n="aw2">America's fastest-growing private companies · 2022</span></div>
+        <div><b>Power Broker Awards</b><span data-i18n="aw3">South Florida Business Journal</span></div>
+      </div>
+      <p class="press" data-i18n="a_press">As seen in South Florida Business Journal, The Real Deal and Commercial Observer.</p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px" data-i18n="a_team">Leadership</div>
+      <div class="team">
+        <div class="tm"><img src="assets/team/miguel-pinto.webp" alt="Miguel Pinto" width="96" height="96" loading="lazy"><div><h3>Miguel Pinto</h3><div class="role" data-i18n="r_mp">Founder &amp; CEO · Managing Broker</div><q lang="en">Florida's #1 independent commercial brokerage. That's the goal.</q><div class="ct"><a href="tel:+13055702600">(305) 570-2600</a><a href="mailto:miguel@apexcapitalrealty.com">miguel@apexcapitalrealty.com</a></div></div></div>
+        <div class="tm"><img src="assets/team/martin-bravo.webp" alt="Martin Bravo" width="96" height="96" loading="lazy"><div><h3>Martin Bravo</h3><div class="role" data-i18n="r_mb">Partner</div><q lang="en">The best systems and models, in every advisor's hands.</q><div class="ct"><a href="tel:+13059673615">(305) 967-3615</a><a href="mailto:martin@apexcapitalrealty.com">martin@apexcapitalrealty.com</a></div></div></div>
+        <div class="tm"><img src="assets/team/adriano-salucci.webp" alt="Adriano Salucci" width="96" height="96" loading="lazy"><div><h3>Adriano Salucci</h3><div class="role" data-i18n="r_as">VP, Investment Sales</div><q lang="en">A collaborative floor, with marketing and TC behind you.</q><div class="ct"><a href="tel:+13053403584">(305) 340-3584</a><a href="mailto:adriano@apexcapitalrealty.com">adriano@apexcapitalrealty.com</a></div></div></div>
+      </div>
+      <p class="srcnote" data-i18n="a_src">Names, titles and quotes as published on apexcapitalrealty.com/team.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="cth">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="k_eyebrow">Contact</div>
+    <h2 id="cth" data-i18n-html="k_title">Have an asset in mind? <em>Talk to the floor.</em></h2>
+    <div class="hcta">
+      <a class="btn btn-p" href="tel:+13055702600" data-i18n="call_now">Call (305) 570-2600</a>
+      <a class="btn btn-o" href="mailto:info@apexcapitalrealty.com" data-i18n="k_mail">Email the team</a>
+    </div>
+    <div class="cgrid">
+      <div><h4 data-i18n="k_off">Offices</h4><p class="big">Miami (HQ)</p><p>561 NE 79th St, Suite 420<br>Miami, FL 33138</p><p class="big" style="margin-top:18px">Orlando</p><p>1110 Sligh Blvd<br>Orlando, FL 32806</p></div>
+      <div><h4 data-i18n="k_reach">Reach us</h4><a class="big" href="tel:+13055702600">(305) 570-2600</a><a href="mailto:info@apexcapitalrealty.com" style="margin-top:6px">info@apexcapitalrealty.com</a><p style="margin-top:14px" data-i18n="k_hours">Mon–Fri · 9:00 AM – 6:00 PM</p></div>
+      <div><h4 data-i18n="k_soc">Follow</h4><div class="soc"><a href="https://www.linkedin.com/company/apex-capital-realty" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/apexcapitalrealty" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/apexcapitalrealty" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/@apexcapitalrealty9266" target="_blank" rel="noopener">YouTube</a></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <img src="assets/brand/logo-white.webp" alt="APEX Capital Realty" width="170" height="34" loading="lazy">
+    <p data-i18n="f_legal">APEX Capital Realty, LLC · Licensed Florida real estate brokerage · APX Insure is a separately licensed agency. Design preview built from the public listings on apexcapitalrealty.com.</p>
+  </div>
+</footer>
+
+<a class="fab" href="tel:+13055702600" aria-label="Call APEX Capital Realty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="fab">Call now</span></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+const DATA=[{"n":1,"url":"https://apexcapitalrealty.com/property/1100-w-mcnab-rd-fort-lauderdale-fl-33309-2/","addr":"1100 W McNab Rd","city":"Fort Lauderdale, FL","region":"Broward","type":"Industrial","status":"sale","price":"$22,500,000","pn":22500000,"facts":[["Size","133,101 SF (parking garage included) · 6.85 AC"],["Frontage","Approximately 500 feet on W McNab Road"],["Parking","525 spaces, including a three-story garage with 237"],["Power","100kW diesel generator"]],"blurb":"Long-term covered-land redevelopment. 1100 W McNab encompasses 82,584 SF of gross leasable area on 6.85 acres along McNab Road, just west of Powerline Road, within Pompano Beach's Gateway Industrial area.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci","Miguel Pinto"],"imgs":[{"s":"assets/p/01-1.webp","w":800,"h":486},{"s":"assets/p/01-2.webp","w":800,"h":586},{"s":"assets/p/01-3.webp","w":800,"h":506}]},{"n":2,"url":"https://apexcapitalrealty.com/property/2640-sw-28th-lane/","addr":"2640 SW 28th Lane","city":"Miami, FL","region":"Miami-Dade","type":"Mixed-use","status":"uc","price":"$13,990,000","pn":13990000,"facts":[["Size","30,000 SF · 34,000 SF lot"],["Price / SF","$466"]],"blurb":"Coconut Grove gateway flex warehouse/covered land with dual US-1 frontage near Metrorail.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/02-1.webp","w":800,"h":450},{"s":"assets/p/02-2.webp","w":800,"h":450},{"s":"assets/p/02-3.webp","w":800,"h":363},{"s":"assets/p/02-4.webp","w":800,"h":433},{"s":"assets/p/02-5.webp","w":800,"h":425}]},{"n":3,"url":"https://apexcapitalrealty.com/property/367-n-orange-ave-30-e-livingston-st-assemblage/","addr":"389 N Orange Ave & 30 E Livingston St","city":"Orlando, FL","region":"Central Florida","type":"Land","status":"sale","price":"$11,700,000","pn":11700000,"facts":[["Size","402,354 max buildable SF · 44,706 SF (1.03 ac) lot"],["Price / SF","$262"]],"blurb":"Downtown Orlando high-density residential site with FAA-approved 450' height.","adv":{"name":"Felipe Escobar","email":"felipe@apexcapitalrealty.com","tel":"+13059859295","phone":"(305) 985-9295"},"advAll":["Felipe Escobar","Miguel Pinto"],"imgs":[{"s":"assets/p/03-1.webp","w":800,"h":486},{"s":"assets/p/03-2.webp","w":800,"h":488},{"s":"assets/p/03-3.webp","w":800,"h":486},{"s":"assets/p/03-4.webp","w":800,"h":480}]},{"n":4,"url":"https://apexcapitalrealty.com/property/2600-2626-ne-2nd-ave/","addr":"2600 & 2626 NE 2nd Avenue","city":"Miami, FL","region":"Miami-Dade","type":"Land","status":"uc","price":"$11,600,000","pn":11600000,"facts":[["Size","217,616 max buildable SF · 27,202 SF (0.62 ac) lot"],["Price / SF","$426"]],"blurb":"Edgewater development site near proposed transit with 217,616 SF as-of-right buildable.","adv":{"name":"Luciana L. González","email":"luciana@apexcapitalrealty.com","tel":"+13056092879","phone":"(305) 609-2879"},"advAll":["Luciana L. González"],"imgs":[{"s":"assets/p/04-1.webp","w":800,"h":486},{"s":"assets/p/04-2.webp","w":800,"h":486},{"s":"assets/p/04-3.webp","w":800,"h":450},{"s":"assets/p/04-4.webp","w":800,"h":486},{"s":"assets/p/04-5.webp","w":800,"h":486}]},{"n":5,"url":"https://apexcapitalrealty.com/property/2120-s-federal-hwy/","addr":"2120 S Federal Hwy","city":"Fort Lauderdale, FL","region":"Broward","type":"Mixed-use","status":"sale","price":"$9,990,000","pn":9990000,"facts":[["Size","9,133 SF · 33,430 SF lot · 3 parcels"],["Price / SF","$299 / SF land"],["Frontage","150 feet on S Federal Hwy (U.S. 1)"],["Building SF","9,133 SF total: retail/office 3,333 SF + multifamily 5,800 SF"]],"blurb":"A rare opportunity to control 33,430 contiguous square feet along Fort Lauderdale's highly visible U.S.","adv":{"name":"Jason Abitbol","email":"jason@apexcapitalrealty.com","tel":"+15615423704","phone":"(561) 542-3704"},"advAll":["Jason Abitbol","Yoni Sunshine"],"imgs":[{"s":"assets/p/05-1.webp","w":800,"h":604},{"s":"assets/p/05-2.webp","w":800,"h":478},{"s":"assets/p/05-3.webp","w":800,"h":599},{"s":"assets/p/05-4.webp","w":800,"h":599},{"s":"assets/p/05-5.webp","w":800,"h":599}]},{"n":6,"url":"https://apexcapitalrealty.com/property/8230-nw-56-st/","addr":"8230 NW 56 St","city":"Doral, FL","region":"Miami-Dade","type":"Industrial","status":"uc","price":"$6,800,000","pn":6800000,"facts":[["Size","22,400 SF · 1.01 acres lot"],["Price / SF","$304"]],"blurb":"Freestanding dual-bay industrial building in Doral with 18' clear and grade-level loading.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci","Alexander Reyes"],"imgs":[{"s":"assets/p/06-1.webp","w":800,"h":450},{"s":"assets/p/06-2.webp","w":800,"h":481},{"s":"assets/p/06-3.webp","w":800,"h":534},{"s":"assets/p/06-4.webp","w":800,"h":534},{"s":"assets/p/06-5.webp","w":800,"h":534}]},{"n":7,"url":"https://apexcapitalrealty.com/property/871-sw-3rd-street/","addr":"871 SW 3rd Street","city":"Miami, FL","region":"Miami-Dade","type":"Multifamily","status":"sale","price":"$5,400,000","pn":5400000,"facts":[["Size","24 units · 11,700 SF"],["Price / SF","$462"],["Units","24 · all one-bedroom, one-bath"],["Occupancy","100% · average in-place rent $1,685 per month"]],"blurb":"871 SW 3rd Street, a 100% occupied, 24-unit multifamily building in East Little Havana.","adv":{"name":"Carl Gorman","email":"carl@apexcapitalrealty.com","tel":"+13053239787","phone":"(305) 323-9787"},"advAll":["Carl Gorman","Ricardo Lay","Max Ballas"],"imgs":[{"s":"assets/p/07-1.webp","w":800,"h":414},{"s":"assets/p/07-2.webp","w":800,"h":618},{"s":"assets/p/07-3.webp","w":800,"h":534},{"s":"assets/p/07-4.webp","w":800,"h":534},{"s":"assets/p/07-5.webp","w":800,"h":599}]},{"n":8,"url":"https://apexcapitalrealty.com/property/315-arthur-st/","addr":"315 Arthur St","city":"Hollywood, FL","region":"Broward","type":"Hospitality","status":"sale","price":"$5,000,000","pn":5000000,"facts":[["Size","7,383 SF · 9,818 SF lot"],["Price / SF","$677"]],"blurb":"Restored 15-room motel near Hollywood Beach for vacation rentals or redevelopment.","adv":{"name":"Martin Bravo","email":"martin@apexcapitalrealty.com","tel":"+13059673615","phone":"(305) 967-3615"},"advAll":["Martin Bravo"],"imgs":[{"s":"assets/p/08-1.webp","w":800,"h":600},{"s":"assets/p/08-2.webp","w":800,"h":600},{"s":"assets/p/08-3.webp","w":800,"h":600},{"s":"assets/p/08-4.webp","w":800,"h":600},{"s":"assets/p/08-5.webp","w":800,"h":600}]},{"n":9,"url":"https://apexcapitalrealty.com/property/322-nevada-st/","addr":"322 Nevada St","city":"Hollywood, FL","region":"Broward","type":"Hospitality","status":"sale","price":"$5,000,000","pn":5000000,"facts":[["Size","8,054 SF · 9,927 SF lot"],["Price / SF","$621"]],"blurb":"16-room motel near Hollywood Beach with private parking; income or redevelopment play.","adv":{"name":"Martin Bravo","email":"martin@apexcapitalrealty.com","tel":"+13059673615","phone":"(305) 967-3615"},"advAll":["Martin Bravo"],"imgs":[{"s":"assets/p/09-1.webp","w":800,"h":600},{"s":"assets/p/09-2.webp","w":800,"h":600},{"s":"assets/p/09-3.webp","w":800,"h":600},{"s":"assets/p/09-4.webp","w":800,"h":600},{"s":"assets/p/09-5.webp","w":800,"h":600}]},{"n":10,"url":"https://apexcapitalrealty.com/property/2605-n-andrews-avenue/","addr":"2605 N Andrews Avenue","city":"Wilton Manors, FL","region":"Broward","type":"Land","status":"sale","price":"$4,900,000","pn":4900000,"facts":[["Size","6,342 SF · 57,209 SF lot (1.31 AC)"],["Property Type","Development site with income · coin laundry + rear office"],["Building SF","6,342 SF"],["Land","57,209 SF (1.31 AC)"]],"blurb":"A rare opportunity to acquire a strategically located development site in the heart of Wilton Manors, directly on highly trafficked North Andrews Avenue, one of Broward County's major north-south commercial…","adv":{"name":"Yoni Sunshine","email":"yoni@apexcapitalrealty.com","tel":"+13055631137","phone":"(305) 563-1137"},"advAll":["Yoni Sunshine","Jason Abitbol"],"imgs":[{"s":"assets/p/10-1.webp","w":800,"h":486},{"s":"assets/p/10-2.webp","w":800,"h":486},{"s":"assets/p/10-3.webp","w":800,"h":486},{"s":"assets/p/10-4.webp","w":800,"h":500},{"s":"assets/p/10-5.webp","w":800,"h":599}]},{"n":11,"url":"https://apexcapitalrealty.com/property/3040-fowler-street/","addr":"3040 Fowler Street","city":"Fort Myers, FL","region":"West & North Florida","type":"Industrial","status":"sale","price":"$4,800,000","pn":4800000,"facts":[["Size","25,489 SF · 84,811 SF (1.95 ac) lot"],["Price / SF","$188"]],"blurb":"±25,489 SF warehouse/showroom on 1.95 acres in Fort Myers' main commercial corridor.","adv":{"name":"Alexander Reyes","email":"alexander@apexcapitalrealty.com","tel":"+17865474777","phone":"(786) 547-4777"},"advAll":["Alexander Reyes"],"imgs":[{"s":"assets/p/11-1.webp","w":800,"h":498},{"s":"assets/p/11-2.webp","w":800,"h":599},{"s":"assets/p/11-3.webp","w":800,"h":599},{"s":"assets/p/11-4.webp","w":800,"h":522},{"s":"assets/p/11-5.webp","w":800,"h":534}]},{"n":12,"url":"https://apexcapitalrealty.com/property/405-n-charles-street-daytona-beach/","addr":"405 N Charles Street","city":"Daytona Beach, FL","region":"Central Florida","type":"Industrial","status":"sale","price":"$4,100,000","pn":4100000,"facts":[["Size","37,125 SF · 150,265 SF (3.45 ac) lot"],["Price / SF","$110"]],"blurb":"Multi-bay industrial asset with in-place cash flow and value-add via below-market rents and near-term rollovers.","adv":{"name":"Yoni Sunshine","email":"yoni@apexcapitalrealty.com","tel":"+13055631137","phone":"(305) 563-1137"},"advAll":["Yoni Sunshine","Jason Abitbol"],"imgs":[{"s":"assets/p/12-1.webp","w":800,"h":599},{"s":"assets/p/12-2.webp","w":800,"h":599},{"s":"assets/p/12-3.webp","w":775,"h":431},{"s":"assets/p/12-4.webp","w":791,"h":431},{"s":"assets/p/12-5.webp","w":800,"h":424}]},{"n":13,"url":"https://apexcapitalrealty.com/property/226-sw-17th-ave/","addr":"226 SW 17th Ave","city":"Miami, FL","region":"Miami-Dade","type":"Multifamily","status":"uc","price":"$3,950,000","pn":3950000,"facts":[["Size","6,200 SF · 29,250 SF (0.67 ac) lot"],["Price / SF","$637"]],"blurb":"Little Havana covered-land play with church, daycare and parking on high-visibility corridor; mixed-use development potential.","adv":{"name":"Luciana L. González","email":"luciana@apexcapitalrealty.com","tel":"+13056092879","phone":"(305) 609-2879"},"advAll":["Luciana L. González"],"imgs":[{"s":"assets/p/13-1.webp","w":800,"h":504},{"s":"assets/p/13-2.webp","w":800,"h":535},{"s":"assets/p/13-3.webp","w":800,"h":599},{"s":"assets/p/13-4.webp","w":800,"h":599},{"s":"assets/p/13-5.webp","w":800,"h":487}]},{"n":14,"url":"https://apexcapitalrealty.com/property/601-w-27th-st/","addr":"601 W 27th St","city":"Sanford, FL","region":"Central Florida","type":"Industrial","status":"sale","price":"$3,900,000","pn":3900000,"facts":[["Size","29,028 SF · 2.26 acres lot"],["Price / SF","$134"]],"blurb":"Fully occupied seven-building industrial compound on 2.26 acres.","adv":{"name":"Felipe Escobar","email":"felipe@apexcapitalrealty.com","tel":"+13059859295","phone":"(305) 985-9295"},"advAll":["Felipe Escobar","Yoni Sunshine"],"imgs":[{"s":"assets/p/14-1.webp","w":800,"h":534},{"s":"assets/p/14-2.webp","w":800,"h":534},{"s":"assets/p/14-3.webp","w":800,"h":533},{"s":"assets/p/14-4.webp","w":800,"h":533},{"s":"assets/p/14-5.webp","w":800,"h":533}]},{"n":15,"url":"https://apexcapitalrealty.com/property/515-s-dixie-highway/","addr":"515 S Dixie Highway","city":"West Palm Beach, FL","region":"Palm Beach & Treasure Coast","type":"Retail","status":"sale","price":"$3,800,000","pn":3800000,"facts":[["Size","5,500 SF · 11,731 SF lot"],["Price / SF","$691"]],"blurb":"Goodyear NNN bond-style investment, 15-year lease, six 5-year options, 10% escalations (site categorizes as Industrial).","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/15-1.webp","w":800,"h":533},{"s":"assets/p/15-2.webp","w":800,"h":533},{"s":"assets/p/15-3.webp","w":800,"h":533},{"s":"assets/p/15-4.webp","w":800,"h":533},{"s":"assets/p/15-5.webp","w":800,"h":533}]},{"n":16,"url":"https://apexcapitalrealty.com/property/601-s-21st-ave/","addr":"601 S 21st Ave","city":"Hollywood, FL","region":"Broward","type":"Office","status":"sale","price":"$3,750,000","pn":3750000,"facts":[["Size","12,150 SF · 16,170 SF lot"],["Price / SF","$309"]],"blurb":"Multi-tenant office/flex building on Dixie Hwy; ~5,000 SF available, existing tenants pay ~$15,000/month.","adv":{"name":"Yoni Sunshine","email":"yoni@apexcapitalrealty.com","tel":"+13055631137","phone":"(305) 563-1137"},"advAll":["Yoni Sunshine","Jason Abitbol","Patrick Basile"],"imgs":[{"s":"assets/p/16-1.webp","w":800,"h":600},{"s":"assets/p/16-2.webp","w":800,"h":547},{"s":"assets/p/16-3.webp","w":800,"h":450},{"s":"assets/p/16-4.webp","w":800,"h":600},{"s":"assets/p/16-5.webp","w":800,"h":600}]},{"n":17,"url":"https://apexcapitalrealty.com/property/2230-2250-nw-8th-avenue-820-nw-23rd-street/","addr":"2230 & 2250 NW 8th Ave · 820 NW 23rd St","city":"Miami, FL","region":"Miami-Dade","type":"Industrial","status":"sale","price":"$3,600,000","pn":3600000,"facts":[["Size","3,709 SF building · 21,164 SF lot"],["Zoning","CI (base)"],["Land","21,164 SF · 0.486 AC · 3 folios"],["Building Size","3,709 SF"]],"blurb":"A three-folio, 21,164 SF commercial assemblage in the Allapattah Industrial District, improved with a 3,709 SF industrial-use building built in 1949; the balance is surfaced, fenced yard.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/17-1.webp","w":800,"h":451},{"s":"assets/p/17-2.webp","w":800,"h":451},{"s":"assets/p/17-3.webp","w":800,"h":451},{"s":"assets/p/17-4.webp","w":800,"h":451},{"s":"assets/p/17-5.webp","w":800,"h":534}]},{"n":18,"url":"https://apexcapitalrealty.com/property/20462-20500-s-dixie-hwy-cutler-bay-fl/","addr":"20462-20500 S Dixie Hwy","city":"Cutler Bay, FL","region":"Miami-Dade","type":"Retail","status":"sale","price":"$3,500,000","pn":3500000,"facts":[["Size","10,774 SF · 26,004 SF lot"],["Price / SF","$325"]],"blurb":"Fully leased retail site with future redevelopment potential on major corridor.","adv":{"name":"Alexander Reyes","email":"alexander@apexcapitalrealty.com","tel":"+17865474777","phone":"(786) 547-4777"},"advAll":["Alexander Reyes","Adriano Salucci"],"imgs":[{"s":"assets/p/18-1.webp","w":800,"h":566},{"s":"assets/p/18-2.webp","w":800,"h":566},{"s":"assets/p/18-3.webp","w":800,"h":450},{"s":"assets/p/18-4.webp","w":800,"h":450},{"s":"assets/p/18-5.webp","w":800,"h":566}]},{"n":19,"url":"https://apexcapitalrealty.com/property/633-pembroke-rd/","addr":"633 Pembroke Rd","city":"Hallandale Beach, FL","region":"Broward","type":"Retail","status":"sale","price":"$3,420,000","pn":3420000,"facts":[["Size","8,254 SF · 33,354 SF (0.77 ac) lot"],["Price / SF","$414"]],"blurb":"Single-tenant net lease on a full city block east of I-95 with Live Local redevelopment upside.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci","Miguel Pinto"],"imgs":[{"s":"assets/p/19-1.webp","w":800,"h":553},{"s":"assets/p/19-2.webp","w":800,"h":534},{"s":"assets/p/19-3.webp","w":800,"h":486},{"s":"assets/p/19-4.webp","w":800,"h":486},{"s":"assets/p/19-5.webp","w":800,"h":599}]},{"n":20,"url":"https://apexcapitalrealty.com/property/7855-nw-46th-street/","addr":"7855 NW 46th Street","city":"Doral, FL","region":"Miami-Dade","type":"Industrial","status":"sale","price":"$3,300,000","pn":3300000,"facts":[["Size","8,184 SF"],["Price / SF","$403"]],"blurb":"Fully air-conditioned warehouse condo in Palmetto West Park with warehouse, showroom, mezzanine and dock-high loading.","adv":{"name":"Shane Pawa","email":"shane@apexcapitalrealty.com","tel":"+15167286669","phone":"(516) 728-6669"},"advAll":["Shane Pawa"],"imgs":[{"s":"assets/p/20-1.webp","w":800,"h":450},{"s":"assets/p/20-2.webp","w":800,"h":450},{"s":"assets/p/20-3.webp","w":800,"h":450},{"s":"assets/p/20-4.webp","w":800,"h":450},{"s":"assets/p/20-5.webp","w":800,"h":450}]},{"n":21,"url":"https://apexcapitalrealty.com/property/1212-414-w-lantana-road/","addr":"1212 & 414 W Lantana Rd","city":"Lantana, FL","region":"Palm Beach & Treasure Coast","type":"Retail","status":"sale","price":"$3,100,000","pn":3100000,"facts":[["Size","9,860 SF · 0.60 AC (two parcels)"],["Price / SF","$314 / SF"]],"blurb":"1212 and 414 W Lantana Road, two retail buildings totaling 9,860 SF on 0.60 acres of C-1-zoned land in Lantana.","adv":{"name":"Patrick Basile","email":"patrick@apexcapitalrealty.com","tel":"+13055702600","phone":"(305) 570-2600"},"advAll":["Patrick Basile"],"imgs":[{"s":"assets/p/21-1.webp","w":800,"h":450},{"s":"assets/p/21-2.webp","w":800,"h":534},{"s":"assets/p/21-3.webp","w":800,"h":483},{"s":"assets/p/21-4.webp","w":800,"h":534},{"s":"assets/p/21-5.webp","w":800,"h":534}]},{"n":22,"url":"https://apexcapitalrealty.com/property/1520-1546-sw-13th-ct/","addr":"1520 & 1546 SW 13th Ct","city":"Pompano Beach, FL","region":"Broward","type":"Industrial","status":"sale","price":"$2,800,000","pn":2800000,"facts":[["Size","6,388 SF · 2 units of 3,194 SF"],["Price / SF","$438"],["Zoning","I-1 General Industrial"],["Units","1520 (Unit 14) & 1546 (Unit 13), back to back"]],"blurb":"Two matching units, sold together.","adv":{"name":"Feyzi Pelit","email":"feyzi@apexcapitalrealty.com","tel":"","phone":""},"advAll":["Feyzi Pelit"],"imgs":[{"s":"assets/p/22-1.webp","w":800,"h":450},{"s":"assets/p/22-2.webp","w":800,"h":450},{"s":"assets/p/22-3.webp","w":800,"h":450},{"s":"assets/p/22-4.webp","w":800,"h":1067},{"s":"assets/p/22-5.webp","w":800,"h":1067}]},{"n":23,"url":"https://apexcapitalrealty.com/property/2808-s-35th-st-3402-douglas-st/","addr":"2808 S 35th St & 3402 Douglas St","city":"Fort Pierce, FL","region":"Palm Beach & Treasure Coast","type":"Land","status":"sale","price":"$2,800,000","pn":2800000,"facts":[["Size","16.6± AC · 723,096 SF · 3 folios"],["Zoning","R-1 Single-Family Low Density (RL future land use)"]],"blurb":"16.6± acres of vacant residential land in Fort Pierce, offered as one package of three folios: 2.0± acres at 2808 S 35th Street, plus 5.0± acres at 3402 Douglas Street and an adjoining 9.6± acres on Douglas…","adv":{"name":"Josh Rosa","email":"joshrosa@apexcapitalrealty.com","tel":"+19548155195","phone":"(954) 815-5195"},"advAll":["Josh Rosa"],"imgs":[{"s":"assets/p/23-1.webp","w":800,"h":516}]},{"n":24,"url":"https://apexcapitalrealty.com/property/6802-causeway-blvd/","addr":"6802 Causeway Blvd","city":"Tampa, FL","region":"West & North Florida","type":"Land","status":"sale","price":"$2,800,000","pn":2800000,"facts":[["Size","3,993 (existing) SF · 2.84 acres lot"]],"blurb":"2.84-acre PD-zoned site for commercial, light industrial or residential development.","adv":{"name":"Felipe Escobar","email":"felipe@apexcapitalrealty.com","tel":"+13059859295","phone":"(305) 985-9295"},"advAll":["Felipe Escobar"],"imgs":[{"s":"assets/p/24-1.webp","w":800,"h":457},{"s":"assets/p/24-2.webp","w":800,"h":457},{"s":"assets/p/24-3.webp","w":800,"h":464},{"s":"assets/p/24-4.webp","w":800,"h":450}]},{"n":25,"url":"https://apexcapitalrealty.com/property/1082-state-road-436/","addr":"1082 State Road 436","city":"Casselberry, FL","region":"Central Florida","type":"Retail","status":"sale","price":"$2,732,000","pn":2732000,"facts":[["Size","8,200 SF · 30,928 SF (0.71 ac) lot"],["Price / SF","$333"]],"blurb":"Fully renovated single-tenant Verizon Wireless location with dual frontage and 70,000+ VPD.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/25-1.webp","w":800,"h":450},{"s":"assets/p/25-2.webp","w":800,"h":450},{"s":"assets/p/25-3.webp","w":800,"h":450},{"s":"assets/p/25-4.webp","w":800,"h":450},{"s":"assets/p/25-5.webp","w":800,"h":450}]},{"n":26,"url":"https://apexcapitalrealty.com/property/4935-e-10th-ln/","addr":"4935 E 10th Ln","city":"Hialeah, FL","region":"Miami-Dade","type":"Industrial","status":"sale","price":"$2,495,000","pn":2495000,"facts":[["Size","4,972 SF · 23,100 SF lot"],["Price / SF","$502"]],"blurb":"Three contiguous M1 parcels with dual street access for logistics, distribution or manufacturing.","adv":{"name":"Danilo Aquino","email":"danilo@apexcapitalrealty.com","tel":"+17862013020","phone":"(786) 201-3020"},"advAll":["Danilo Aquino"],"imgs":[{"s":"assets/p/26-1.webp","w":360,"h":170},{"s":"assets/p/26-2.webp","w":360,"h":170},{"s":"assets/p/26-3.webp","w":360,"h":170},{"s":"assets/p/26-4.webp","w":360,"h":270},{"s":"assets/p/26-5.webp","w":360,"h":165}]},{"n":27,"url":"https://apexcapitalrealty.com/property/11911-w-dixie-hwy-north-miami-fl-33161/","addr":"11911 W Dixie Hwy","city":"Miami, FL","region":"Miami-Dade","type":"Retail","status":"sale","price":"$2,300,000","pn":2300000,"facts":[["Size","5,005 SF · 10,000 SF lot"],["Price / SF","$460 / SF"],["Zoning","BU-1"],["Year Built","1951 / Renovated 2025"]],"blurb":"The opportunity to acquire 11911 W Dixie Highway, a freestanding 5,005 SF two-story CBS building on a 10,000 SF lot at NE 119th Street, in unincorporated Miami-Dade County between Miami Shores and North Miami.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/27-1.webp","w":800,"h":494},{"s":"assets/p/27-2.webp","w":656,"h":251},{"s":"assets/p/27-3.webp","w":712,"h":533}]},{"n":28,"url":"https://apexcapitalrealty.com/property/801-brickell-bay-drive-unit-4c042/","addr":"801 Brickell Bay Drive, Unit 4C042","city":"Miami, FL","region":"Miami-Dade","type":"Office","status":"sale","price":"$2,200,000","pn":2200000,"facts":[["Size","5,411 SF"],["Price / SF","$407"]],"blurb":"Waterfront commercial condo with ~45' bay frontage and liquor license reservation in Four Ambassadors.","adv":{"name":"Adriano Salucci","email":"adriano@apexcapitalrealty.com","tel":"+13053403584","phone":"(305) 340-3584"},"advAll":["Adriano Salucci"],"imgs":[{"s":"assets/p/28-1.webp","w":800,"h":599},{"s":"assets/p/28-2.webp","w":800,"h":599},{"s":"assets/p/28-3.webp","w":800,"h":486},{"s":"assets/p/28-4.webp","w":800,"h":599},{"s":"assets/p/28-5.webp","w":800,"h":599}]},{"n":29,"url":"https://apexcapitalrealty.com/property/4000-nw-17-ave/","addr":"4000 NW 17 Ave","city":"Miami, FL","region":"Miami-Dade","type":"Mixed-use","status":"sale","price":"$1,950,000","pn":1950000,"facts":[["Size","8,096 SF · 9,350 SF lot"],["Price / SF","$241"]],"blurb":"Mixed-use corner in North Allapattah with $4,500/month tenant and space for restaurant/bar or owner use.","adv":{"name":"Danilo Aquino","email":"danilo@apexcapitalrealty.com","tel":"+17862013020","phone":"(786) 201-3020"},"advAll":["Danilo Aquino"],"imgs":[{"s":"assets/p/29-1.webp","w":800,"h":487},{"s":"assets/p/29-2.webp","w":800,"h":608},{"s":"assets/p/29-3.webp","w":800,"h":469},{"s":"assets/p/29-4.webp","w":800,"h":600},{"s":"assets/p/29-5.webp","w":800,"h":600}]},{"n":30,"url":"https://apexcapitalrealty.com/property/365-n-royal-poinciana-blvd/","addr":"365 N Royal Poinciana Blvd","city":"Miami Springs, FL","region":"Miami-Dade","type":"Retail","status":"sale","price":"$1,650,000","pn":1650000,"facts":[["Size","3,576 SF · 6,750 SF lot"],["Price / SF","$461"]],"blurb":"Turnkey restaurant investment occupied by Latin gastrobar on modified NNN lease with immediate cash flow.","adv":{"name":"Carl Gorman","email":"carl@apexcapitalrealty.com","tel":"+13053239787","phone":"(305) 323-9787"},"advAll":["Carl Gorman","Tatiana Escobar"],"imgs":[{"s":"assets/p/30-1.webp","w":800,"h":438},{"s":"assets/p/30-2.webp","w":800,"h":599},{"s":"assets/p/30-3.webp","w":800,"h":534},{"s":"assets/p/30-4.webp","w":800,"h":534},{"s":"assets/p/30-5.webp","w":800,"h":534}]}];
+const SITE='https://apexcapitalrealty.com';
+const MK=[
+ {k:'Miami-Dade',slug:'miami-dade',es:'Miami-Dade'},
+ {k:'Broward',slug:'broward',es:'Broward'},
+ {k:'Palm Beach & Treasure Coast',slug:'palm-beach-treasure-coast',es:'Palm Beach y Treasure Coast'},
+ {k:'Central Florida',en:'Orlando & Central Florida',slug:'orlando-central-florida',es:'Orlando y Florida Central'},
+ {k:'West & North Florida',en:'Tampa Bay, West & North Florida',slug:'tampa-west-north-florida',es:'Tampa Bay, Oeste y Norte de Florida'}
+];
+const I18N={
+ en:{skip:'Skip to listings',nav_feat:'Signature listings',nav_cat:'All listings',nav_mk:'Markets',nav_ab:'The firm',nav_ct:'Contact',call_now:'Call (305) 570-2600',
+  h_eyebrow:'Industrial first · Every market in Florida',h_title:'Florida commercial property, <em>priced and in view.</em>',
+  h_lead:'The 30 highest-priced active sale listings from APEX Capital Realty: photos, asking price and the advisor to call, all on one page.',h_browse:'Browse the 30 listings',
+  s1:'Closed volume, every asset class',s2:'Florida cities, Tallahassee to the Keys',s3:'Founded in Miami',s4:'Offices · Miami and Orlando',
+  f_eyebrow:'Signature listings',f_title:'The six largest <em>assets on the market.</em>',f_sub:'Ranked by asking price. Each one links to its full listing on the APEX site.',f_all:'All 30 listings',f_view:'View listing',
+  c_eyebrow:'The catalog',c_title:'30 listings, <em>highest price first.</em>',c_sub:'The 30 highest-priced active sale listings. Filter by market or flip the order; every card goes straight to the advisor.',
+  c_note:'Showing the 30 highest-priced active sale listings of 90 active listings on apexcapitalrealty.com. Information is deemed reliable but not guaranteed; subject to errors, omissions, prior sale or lease, or withdrawal without notice. Property descriptions are shown in their original English.',
+  sort_l:'Sort by',sort_d:'Price: high to low',sort_a:'Price: low to high',all:'All markets',
+  m_eyebrow:'Markets',m_title:'Five markets, <em>one floor.</em>',m_n:'in this catalog',
+  a_eyebrow:'The firm',a_title:'Founded in 2017 on one conviction: <em>boutique beats bureaucracy.</em>',
+  a_p1:'APEX was built as the firm its founders wanted to work at: independent, entrepreneurial, and measured on what it closes. Brokerage is the engine; APX Insure and a capital markets desk sit around it.',
+  a_p2:'Deals get worked from both sides of one floor, and leads go to whoever can close them.',
+  aw1:'Top 25 South Florida Commercial Brokerage',aw2:"America's fastest-growing private companies · 2022",aw3:'South Florida Business Journal',
+  a_press:'As seen in South Florida Business Journal, The Real Deal and Commercial Observer.',a_team:'Leadership',a_src:'Names, titles and quotes as published on apexcapitalrealty.com/team.',
+  r_mp:'Founder & CEO · Managing Broker',r_mb:'Partner',r_as:'VP, Investment Sales',
+  k_eyebrow:'Contact',k_title:'Have an asset in mind? <em>Talk to the floor.</em>',k_mail:'Email the team',k_off:'Offices',k_reach:'Reach us',k_hours:'Mon–Fri · 9:00 AM – 6:00 PM',k_soc:'Follow',
+  f_legal:'APEX Capital Realty, LLC · Licensed Florida real estate brokerage · APX Insure is a separately licensed agency. Design preview built from the public listings on apexcapitalrealty.com.',fab:'Call now',
+  ask:'Ask about this property',full:'View full listing',advisor:'Listing advisor',photo:'Photo',of:'of',prev:'Previous photo',next:'Next photo',
+  sale:'For sale',uc:'Under contract',showing:'Showing',empty:'No listings in this market.',inq:'Inquiry',
+  mail_body:'Hello, I would like more information about this property:',
+  L:{'Size':'Size','Price / SF':'Price / SF','Zoning':'Zoning','Units':'Units','Frontage':'Frontage','Year Built':'Year built','Clear Height':'Clear height','Occupancy':'Occupancy','NOI':'NOI','Parking':'Parking','Power':'Power','Property Type':'Property type','Building SF':'Building SF','Land':'Land','Land area':'Land area','Lot Size':'Lot size','Building Size':'Building size'},
+  T:{'Industrial':'Industrial','Land':'Land','Mixed-use':'Mixed-use','Multifamily':'Multifamily','Hospitality':'Hospitality','Retail':'Retail','Office':'Office'}},
+ es:{skip:'Ir a las propiedades',nav_feat:'Propiedades destacadas',nav_cat:'Todas las propiedades',nav_mk:'Mercados',nav_ab:'La firma',nav_ct:'Contacto',call_now:'Llamar al (305) 570-2600',
+  h_eyebrow:'Primero industrial · Todos los mercados de Florida',h_title:'Propiedades comerciales en Florida, <em>con precio y a la vista.</em>',
+  h_lead:'Las 30 propiedades en venta de mayor precio de APEX Capital Realty: fotos, precio de venta y el asesor a quien llamar, todo en una sola página.',h_browse:'Ver las 30 propiedades',
+  s1:'Volumen cerrado, todas las clases de activo',s2:'Ciudades de Florida, de Tallahassee a los Cayos',s3:'Fundada en Miami',s4:'Oficinas · Miami y Orlando',
+  f_eyebrow:'Propiedades destacadas',f_title:'Los seis activos <em>más grandes del mercado.</em>',f_sub:'Ordenados por precio de venta. Cada uno enlaza a su ficha completa en el sitio de APEX.',f_all:'Las 30 propiedades',f_view:'Ver ficha',
+  c_eyebrow:'El catálogo',c_title:'30 propiedades, <em>de mayor a menor precio.</em>',c_sub:'Las 30 propiedades activas en venta de mayor precio. Filtra por mercado o invierte el orden; cada tarjeta lleva directo al asesor.',
+  c_note:'Se muestran las 30 propiedades activas en venta de mayor precio, de 90 propiedades activas en apexcapitalrealty.com. La información se considera confiable pero no está garantizada; sujeta a errores, omisiones, venta o arriendo previo, o retiro sin aviso. Las descripciones de las propiedades se muestran en su inglés original.',
+  sort_l:'Ordenar por',sort_d:'Precio: de mayor a menor',sort_a:'Precio: de menor a mayor',all:'Todos los mercados',
+  m_eyebrow:'Mercados',m_title:'Cinco mercados, <em>un solo equipo.</em>',m_n:'en este catálogo',
+  a_eyebrow:'La firma',a_title:'Fundada en 2017 con una convicción: <em>lo boutique supera a la burocracia.</em>',
+  a_p1:'APEX se creó como la firma en la que sus fundadores querían trabajar: independiente, emprendedora y medida por lo que cierra. La correduría es el motor; APX Insure y una mesa de mercado de capitales la rodean.',
+  a_p2:'Los negocios se trabajan desde ambos lados de un mismo piso, y los clientes potenciales van a quien pueda cerrarlos.',
+  aw1:'Top 25 Corredoras Comerciales de Sur de Florida',aw2:'Las empresas privadas de más rápido crecimiento de EE. UU. · 2022',aw3:'South Florida Business Journal',
+  a_press:'Visto en South Florida Business Journal, The Real Deal y Commercial Observer.',a_team:'Liderazgo',a_src:'Nombres, cargos y frases tal como se publican en apexcapitalrealty.com/team.',
+  r_mp:'Fundador y CEO · Broker Gerente',r_mb:'Socio',r_as:'VP, Ventas de Inversión',
+  k_eyebrow:'Contacto',k_title:'¿Tienes un activo en mente? <em>Habla con el equipo.</em>',k_mail:'Escribir al equipo',k_off:'Oficinas',k_reach:'Contáctanos',k_hours:'Lun–Vie · 9:00 – 18:00',k_soc:'Síguenos',
+  f_legal:'APEX Capital Realty, LLC · Corredora de bienes raíces con licencia de Florida · APX Insure es una agencia con licencia independiente. Vista de diseño creada con las propiedades públicas de apexcapitalrealty.com.',fab:'Llamar',
+  ask:'Consultar por esta propiedad',full:'Ver ficha completa',advisor:'Asesor a cargo',photo:'Foto',of:'de',prev:'Foto anterior',next:'Foto siguiente',
+  sale:'En venta',uc:'Bajo contrato',showing:'Mostrando',empty:'No hay propiedades en este mercado.',inq:'Consulta',
+  mail_body:'Hola, quisiera más información sobre esta propiedad:',
+  L:{'Size':'Tamaño','Price / SF':'Precio / SF','Zoning':'Zonificación','Units':'Unidades','Frontage':'Frente','Year Built':'Año de construcción','Clear Height':'Altura libre','Occupancy':'Ocupación','NOI':'NOI','Parking':'Estacionamiento','Power':'Energía','Property Type':'Tipo de propiedad','Building SF':'SF construidos','Land':'Terreno','Land area':'Superficie de terreno','Lot Size':'Tamaño del lote','Building Size':'Tamaño del edificio'},
+  T:{'Industrial':'Industrial','Land':'Terreno','Mixed-use':'Uso mixto','Multifamily':'Multifamiliar','Hospitality':'Hospitalidad','Retail':'Comercial','Office':'Oficinas'}}
+};
+let lang='en';
+try{const s=localStorage.getItem('apex-lang');if(s==='es'||s==='en')lang=s;}catch(e){}
+const t=k=>I18N[lang][k]??I18N.en[k]??k;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function sizeTr(v){
+  if(lang==='en')return v;
+  return v.replace(/max buildable SF/g,'SF máx. construibles').replace(/\bbuilding\b/g,'edificio').replace(/\blot\b/g,'lote').replace(/\bunits of\b/g,'unidades de').replace(/\bunits\b/g,'unidades').replace(/\bparcels\b/g,'parcelas').replace(/\bfolios\b/g,'folios').replace(/\bexisting\b/g,'existente').replace(/\bacres\b/g,'acres').replace(/\bacre\b/g,'acre');
+}
+const mkName=k=>{const m=MK.find(x=>x.k===k);return m?(lang==='es'?m.es:(m.en||m.k)):k};
+let state={region:'all',sort:'desc'};
+
+/* ---------- render ---------- */
+function mailHref(p){
+  const to=p.adv.email||'info@apexcapitalrealty.com';
+  const subj=encodeURIComponent(t('inq')+': '+p.addr+', '+p.city);
+  const body=encodeURIComponent(t('mail_body')+'\n\n'+p.addr+', '+p.city+'\n'+p.price+'\n'+p.url+'\n');
+  return 'mailto:'+to+'?subject='+subj+'&body='+body;
+}
+function cardHTML(p){
+  const imgs=p.imgs.map((im,i)=>{
+    const alt=esc(p.addr+', '+p.city+' — '+(t('T')[p.type]||p.type)+' · '+t(p.status)+' — '+t('photo')+' '+(i+1));
+    return i===0?`<img src="${im.s}" alt="${alt}" width="${im.w}" height="${im.h}" loading="lazy">`
+      :`<img data-src="${im.s}" alt="${alt}" width="${im.w}" height="${im.h}">`;
+  }).join('');
+  const multi=p.imgs.length>1;
+  const facts=p.facts.map(([k,v])=>`<div><dt>${esc(t('L')[k]||k)}</dt><dd>${esc(k==='Size'?sizeTr(v):v)}</dd></div>`).join('');
+  const psf='';
+  const advTxt=p.adv.name?`<div class="adv">${esc(t('advisor'))}: <b>${esc(p.advAll.join(' · '))}</b>${p.adv.phone?' · <a href="tel:'+esc(p.adv.tel)+'">'+esc(p.adv.phone)+'</a>':''}</div>`:'';
+  return `<article class="pc" data-n="${p.n}" data-region="${esc(p.region)}" data-pn="${p.pn}">
+  <div class="car" data-count="${p.imgs.length}">
+    <div class="ctrk" tabindex="0" role="group" aria-roledescription="carousel" aria-label="${esc(p.addr)}">${imgs}</div>
+    <span class="tg ${p.status==='uc'?'uc':''}">${esc(t(p.status))}</span><span class="tg tp">${esc(t('T')[p.type]||p.type)}</span>
+    ${multi?`<button type="button" class="arr pv" aria-label="${esc(t('prev'))}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" class="arr nx" aria-label="${esc(t('next'))}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="dots" aria-hidden="true">${p.imgs.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><span class="cnt"><span class="cur">1</span> ${esc(t('of'))} ${p.imgs.length}</span>`:''}
+  </div>
+  <div class="cb">
+    <div class="price">${esc(p.price)}</div>
+    <h3>${esc(p.addr)}</h3>
+    <div class="loc">${esc(p.city)} · ${esc(mkName(p.region))}</div>
+    <dl class="facts">${facts}</dl>
+    <p class="blurb" lang="en">${esc(p.blurb)}</p>
+    ${advTxt}
+    <div class="acts"><a class="btn btn-p" href="${esc(mailHref(p))}" data-act="ask">${esc(t('ask'))}</a><a class="lk" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t('full'))} →</a></div>
+  </div></article>`;
+}
+function renderGrid(){
+  const g=document.getElementById('grid');
+  let list=DATA.filter(p=>state.region==='all'||p.region===state.region).sort((a,b)=>state.sort==='desc'?b.pn-a.pn:a.pn-b.pn);
+  if(!list.length){g.innerHTML=`<p class="empty">${esc(t('empty'))}</p>`;return}
+  g.innerHTML=list.map(cardHTML).join('');
+  g.querySelectorAll('.pc').forEach((c,i)=>{if(i<4)c.classList.add('lg');initCar(c)});
+}
+function renderChips(){
+  const c=document.getElementById('chips');
+  const count=k=>DATA.filter(p=>p.region===k).length;
+  c.innerHTML=`<button type="button" class="chip" data-r="all" aria-pressed="${state.region==='all'}">${esc(t('all'))}<small>${DATA.length}</small></button>`+
+   MK.filter(m=>count(m.k)).map(m=>`<button type="button" class="chip" data-r="${esc(m.k)}" aria-pressed="${state.region===m.k}">${esc(lang==='es'?m.es:(m.en||m.k))}<small>${count(m.k)}</small></button>`).join('');
+}
+function renderFeat(){
+  const top=[...DATA].sort((a,b)=>b.pn-a.pn).slice(0,6);
+  const tr=document.getElementById('htrack');
+  tr.innerHTML=top.map((p,i)=>`<a class="fp" href="${esc(p.url)}" target="_blank" rel="noopener" aria-label="${esc(p.addr+', '+p.city+' — '+p.price)}">
+    <img src="${p.imgs[0].s}" alt="${esc(p.addr+', '+p.city+' — '+(t('T')[p.type]||p.type))}" width="${p.imgs[0].w}" height="${p.imgs[0].h}" loading="lazy">
+    <span class="tg ${p.status==='uc'?'uc':''}">${esc(t(p.status))}</span>
+    <div class="ft"><div class="num">0${i+1}</div><div class="pr">${esc(p.price)}</div><div class="ad">${esc(p.addr)}</div><div class="mt">${esc(p.city)} · ${esc(t('T')[p.type]||p.type)} · ${esc(sizeTr(p.facts[0]?p.facts[0][1].split(' · ')[0]:''))}</div><span class="go">${esc(t('f_view'))} →</span></div></a>`).join('')+
+   `<div class="fp-end"><h3>${esc(t('f_all'))}</h3><a class="btn btn-p" href="#catalog">${esc(t('h_browse'))}</a></div>`;
+}
+function renderMarkets(){
+  document.getElementById('mrows').innerHTML=MK.map((m,i)=>{const n=DATA.filter(p=>p.region===m.k).length;
+   return `<a class="mr" href="${SITE}/markets/${m.slug}/" target="_blank" rel="noopener"><i>0${i+1}</i><strong>${esc(lang==='es'?m.es:(m.en||m.k))}</strong><span>${n?n+' '+esc(t('m_n')):''}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>`}).join('');
+}
+
+/* ---------- carousel ---------- */
+function loadAll(card){card.querySelectorAll('img[data-src]').forEach(i=>{i.src=i.dataset.src;i.removeAttribute('data-src')})}
+function initCar(card){
+  const car=card.querySelector('.car'),trk=card.querySelector('.ctrk');if(!car)return;
+  const dots=[...card.querySelectorAll('.dots i')],cur=card.querySelector('.cur');
+  ['pointerenter','touchstart','focusin'].forEach(ev=>car.addEventListener(ev,()=>loadAll(card),{once:true,passive:true}));
+  const go=d=>{loadAll(card);trk.scrollBy({left:d*trk.clientWidth,behavior:'smooth'})};
+  card.querySelector('.pv')?.addEventListener('click',()=>go(-1));
+  card.querySelector('.nx')?.addEventListener('click',()=>go(1));
+  trk.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){go(1);e.preventDefault()}if(e.key==='ArrowLeft'){go(-1);e.preventDefault()}});
+  let raf;trk.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{
+    const i=Math.round(trk.scrollLeft/trk.clientWidth);dots.forEach((d,j)=>d.classList.toggle('on',j===i));if(cur)cur.textContent=i+1;});},{passive:true});
+}
+
+/* ---------- i18n ---------- */
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=I18N[lang][el.dataset.i18n];if(v!=null)el.textContent=v});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const v=I18N[lang][el.dataset.i18nHtml];if(v!=null)el.innerHTML=v});
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
+  document.querySelector('.fab').setAttribute('aria-label',lang==='es'?'Llamar a APEX Capital Realty':'Call APEX Capital Realty');
+  document.getElementById('sort').querySelectorAll('option').forEach(o=>{o.textContent=I18N[lang]['sort_'+o.value[0]]});
+  renderChips();renderGrid();renderFeat();renderMarkets();bindReveal();
+  if(window.ScrollTrigger&&window.__pin)setTimeout(()=>ScrollTrigger.refresh(),50);
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;try{localStorage.setItem('apex-lang',lang)}catch(e){}applyLang()}));
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;state.region=b.dataset.r;renderChips();renderGrid();});
+document.getElementById('sort').addEventListener('change',e=>{state.sort=e.target.value;renderGrid()});
+
+/* ---------- header, menu, hero ---------- */
+const hdr=document.getElementById('hdr');
+const onScroll=()=>hdr.classList.toggle('solid',scrollY>40);addEventListener('scroll',onScroll,{passive:true});onScroll();
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+burger.addEventListener('click',()=>{const o=mnav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+mnav.addEventListener('click',e=>{if(e.target.closest('a')){mnav.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function hero(){
+  const imgs=[...document.querySelectorAll('#hslides img')];
+  const caps=['8230 NW 56 St · Doral','2201 NE 2nd Ave · Edgewater, Miami','2121 Biscayne Blvd · Miami'];
+  const cap=document.getElementById('hcap');
+  addEventListener('load',()=>{
+    imgs.forEach(i=>{if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}});
+    if(reduce)return;let k=0;
+    setInterval(()=>{imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on');cap.textContent=caps[k]},6500);
+  });
+})();
+
+/* ---------- reveal ---------- */
+let io;
+function bindReveal(){
+  document.querySelectorAll('.chead>div,.fhead>*,.mr,.about .agrid>div,.tm,.awards div,.cgrid>div,.contact h2,.mk h2').forEach(el=>el.classList.add('rv'));
+  if(!('IntersectionObserver' in window)||reduce){document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'));return}
+  io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+}
+
+/* ---------- init ---------- */
+document.body.classList.remove('nojs');
+applyLang();
+
+/* ---------- GSAP pinned gallery (desktop) ---------- */
+addEventListener('load',()=>{
+  if(!window.gsap||!window.ScrollTrigger||reduce)return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.matchMedia().add('(min-width: 1024px)',()=>{
+    const hs=document.getElementById('hs'),tr=document.getElementById('htrack');
+    hs.classList.add('pinned');window.__pin=true;
+    const dist=()=>Math.max(0,tr.scrollWidth-innerWidth);
+    const tw=gsap.to(tr,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:hs,start:'top top',end:()=>'+='+dist(),pin:true,scrub:.6,invalidateOnRefresh:true,anticipatePin:1}});
+    return()=>{hs.classList.remove('pinned');window.__pin=false;gsap.set(tr,{clearProps:'transform'})};
+  });
+});
+</script>
+</body>
+</html>
