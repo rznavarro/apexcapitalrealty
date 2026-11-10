@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"APEX Capital Realty","description":"Independent commercial real estate brokerage in Florida, founded in 2017 in Miami.","url":"https://apexcapitalrealty.com/","logo":"assets/brand/logo-navy.webp","image":"assets/hero/hero-1.webp","telephone":"+1-305-570-2600","email":"info@apexcapitalrealty.com","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"561 NE 79th St, Suite 420","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":"Florida","openingHours":"Mo-Fr 09:00-18:00","sameAs":["https://www.linkedin.com/company/apex-capital-realty","https://www.instagram.com/apexcapitalrealty","https://www.facebook.com/apexcapitalrealty","https://www.youtube.com/@apexcapitalrealty9266"]}
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"APEX Capital Realty","description":"Independent commercial real estate brokerage in Florida, founded in 2017 in Miami.","url":"https://apexcapitalrealty.com/","logo":"assets/brand/logo-navy.webp","image":"assets/hero/hero-1.webp","telephone":"+1-305-570-2600","email":"info@apexcapitalrealty.com","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"561 NE 79th St, Suite 420","addressLocality":"Miami","addressRegion":"FL","postalCode":"33138","addressCountry":"US"},"areaServed":"Florida","openingHours":"Mo-Fr 09:00-18:00"}
 </script>
 <style>
 :root{
@@ -167,8 +167,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacin
 .mk h2{font-size:clamp(40px,5vw,72px);font-weight:500;margin-top:12px}
 .mk h2 em{font-style:italic;color:var(--accent)}
 .mrows{margin-top:48px;border-top:1px solid var(--line-dk)}
-.mr{display:grid;grid-template-columns:70px 1fr auto auto;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line-dk);transition:padding .3s,background .3s}
-.mr:hover{padding-left:16px;background:rgba(157,176,242,.07)}
+.mr{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line-dk);transition:padding .3s,background .3s}
+
 .mr i{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px}
 .mr strong{font-family:var(--serif);font-size:clamp(28px,3.4vw,48px);font-weight:500;line-height:1.1}
 .mr span{font-size:14px;color:var(--on-dark-2)}
@@ -201,7 +201,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacin
 .contact .wrap{position:relative}
 .contact h2{font-size:clamp(44px,6.4vw,96px);font-weight:500;max-width:11em;margin:14px 0 30px}
 .contact h2 em{font-style:italic;color:var(--accent)}
-.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:70px;padding-top:34px;border-top:1px solid var(--line-dk)}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:70px;padding-top:34px;border-top:1px solid var(--line-dk)}
 .cgrid h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .cgrid p,.cgrid a{font-size:15.5px;color:var(--on-dark-2);display:block}
 .cgrid a:hover{color:#fff}
@@ -487,7 +487,7 @@ body.dvopen .hdr{background:rgba(7,11,38,.97);backdrop-filter:blur(10px);box-sha
     <div class="cgrid">
       <div><h4 data-i18n="k_off">Offices</h4><p class="big">Miami (HQ)</p><p>561 NE 79th St, Suite 420<br>Miami, FL 33138</p><p class="big" style="margin-top:18px">Orlando</p><p>1110 Sligh Blvd<br>Orlando, FL 32806</p></div>
       <div><h4 data-i18n="k_reach">Reach us</h4><a class="big" href="tel:+13055702600">(305) 570-2600</a><a href="mailto:info@apexcapitalrealty.com" style="margin-top:6px">info@apexcapitalrealty.com</a><p style="margin-top:14px" data-i18n="k_hours">Mon–Fri · 9:00 AM – 6:00 PM</p></div>
-      <div><h4 data-i18n="k_soc">Follow</h4><div class="soc"><a href="https://www.linkedin.com/company/apex-capital-realty" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/apexcapitalrealty" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/apexcapitalrealty" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/@apexcapitalrealty9266" target="_blank" rel="noopener">YouTube</a></div></div>
+      
     </div>
   </div>
 </section>
@@ -632,7 +632,7 @@ function renderFeat(){
 }
 function renderMarkets(){
   document.getElementById('mrows').innerHTML=MK.map((m,i)=>{const n=DATA.filter(p=>p.region===m.k).length;
-   return `<a class="mr" href="${SITE}/markets/${m.slug}/" target="_blank" rel="noopener"><i>0${i+1}</i><strong>${esc(lang==='es'?m.es:(m.en||m.k))}</strong><span>${n?n+' '+esc(t('m_n')):''}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>`}).join('');
+   return `<div class="mr"><i>0${i+1}</i><strong>${esc(lang==='es'?m.es:(m.en||m.k))}</strong><span>${n?n+' '+esc(t('m_n')):''}</span></div>`}).join('');
 }
 
 /* ---------- carousel ---------- */
@@ -728,7 +728,7 @@ function detailHTML(p){
   </div><aside class="dside">
     <div class="dcard"><h3>${esc(t('spec'))}</h3><dl class="dspecs">${specs.map(([k,v])=>`<div><dt>${esc(t(k))}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div>
     <div class="dcard"><h3>${esc(t('advs'))}</h3>${adv}<div class="dcta"><a class="btn btn-p" href="${esc(dMail(p,'om'))}">${esc(t('om'))}</a><a class="btn btn-o" href="${esc(dMail(p,'ask'))}">${esc(t('askp'))}</a></div></div>
-    <div class="dcard"><a class="dmap" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.map)}" target="_blank" rel="noopener"><span>${esc(t('map'))}</span><span aria-hidden="true">→</span></a><a class="dorig" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t('orig'))} ↗</a></div>
+    
   </aside></div>
   <nav class="dpn" aria-label="${esc(t('listing'))}">${nav(prev,'nprev')}${nav(next,'nnext')}</nav>
   </div>`;
